@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Pro - Pagamento</title>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+</head>
+<body>
+    <h2>Pagamento com Mercado Pago</h2>
+    <button id="checkout-btn">Pagar</button>
+
+    <script>
+        const mp = new MercadoPago("APP_USR-29f5f10c-362f-4194-87ae-6de0b852dbc6", {
+            locale: 'pt-BR'
+        });
+
+        document.getElementById("checkout-btn").addEventListener("click", async () => {
+            const response = await fetch("/criar_preferencia/");
+            const data = await response.json();
+
+            mp.checkout({
+                preference: {
+                    id: data.id
+                },
+                autoOpen: true // abre automaticamente
+            });
+        });
+    </script>
+</body>
+</html>
