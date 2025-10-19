@@ -1,0 +1,3 @@
+[submodule "mercado pago api/star-cine"]
+	path = mercado pago api/star-cine
+	url = https://github.com/sarahgbarros/star-cine.git
