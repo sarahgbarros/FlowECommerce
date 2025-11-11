@@ -1,0 +1,154 @@
+.cartDropdown {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 320px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.216);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.216);
+  font-family: Figtree, sans-serif;
+}
+
+.cartItemsContainer {
+  padding: 15px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.216);
+  background-color: #ffffff; 
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding-right: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.itemDetails {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 10px;
+}
+
+.itemImage {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.itemName {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #000000;
+  margin-bottom: 4px;
+}
+
+.itemPrice {
+  color: #666;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.itemCheckbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  margin: 0 10px;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff;
+}
+
+.itemCheckbox:checked {
+  background-color: #55a2ee;
+  border-color: #55a2ee;
+}
+
+.itemCheckbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: white;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: #a0a0a0;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 1em;
+  transition: color 0.2s;
+}
+
+.deleteButton:hover {
+  color: #ff4d4f;
+}
+
+.cartSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 5px;
+  margin-top: 10px;
+}
+
+.selectAll {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.95em;
+}
+
+.cartTotal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1em;
+}
+
+.totalPrice {
+  font-weight: bold;
+  color: #333;
+}
+
+.checkoutButton {
+  display: block;
+  width: 90%;
+  margin: 15px auto 20px auto;
+  padding: 12px 20px;
+  background-color: #000000; 
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.checkoutButton:hover {
+  background-color: #333333;
+}
