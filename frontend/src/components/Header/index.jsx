@@ -69,9 +69,9 @@ const Header = () => {
           <i className={`fa-solid fa-magnifying-glass ${styles['search-icon']}`}></i>        
           </div>
 
-        <button className={styles.dropbtn}>
+        <button className={styles.profile}>
           <span className={styles.titleMenu}>
-            Perfil<i className="fas fa-user user-icon"></i>
+            Perfil <i class="fa-solid fa-circle-user"></i>
           </span>
         </button>
 

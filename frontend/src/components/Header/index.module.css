@@ -114,6 +114,19 @@
   box-shadow: 0 0 0 2px rgba(84, 145, 84);
 }
 
+.profile{
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile i {
+  margin-left: 5px;
+  font-size: 1em;
+}
+
 .cart-shopping {
   width: 40px;
   height: 40px;
@@ -130,15 +143,13 @@
   font-size: 20px;
 }
 
-/* Container do Dropdown do Carrinho */
 .dropdown-cart {
-  position: relative; /* Ponto de ancoragem para o CartDropdown */
+  position: relative; 
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Botão que aciona o CartDropdown */
 .cart-trigger {
   display: flex;
   align-items: center;
@@ -149,25 +160,19 @@
   cursor: pointer;
 }
 
-/* Chevron/seta de toggle */
 .cart-trigger i:last-child {
   font-size: 16px;
   transition: transform 0.3s ease;
 }
 
-/* Estilo de rotação quando o dropdown está aberto */
 .rotated {
   transform: rotate(180deg);
 }
-
-/* REMOVIDO: O antigo .cart-dropdown-content foi substituído pelo componente CartDropdown */
-
 
 .checkbox {
   opacity: 0;
   position: absolute;
 }
-
 
 .turn-on {
   background-color: #dad9d8;
@@ -202,4 +207,3 @@
 .turn-on i {
   font-size: 12px;
 }
-
