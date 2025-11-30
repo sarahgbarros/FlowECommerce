@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.module.css';
 import { useContextCart } from '../../contexts/CartContext';
+import { Link } from 'react-router-dom';
 
 const SingleProductCard = ({ item }) => {
     const { addProductToCart } = useContextCart();
@@ -9,7 +10,7 @@ const SingleProductCard = ({ item }) => {
         <div className={styles.card}>
 
             <div className={styles.imageContainer}>
-                <img src={item.image} alt={item.name} className={styles.image} />
+                <Link to=""><img src={item.image} alt={item.name} className={styles.image}/></Link>
 
                 <button className={styles.favoriteButton}>
                     <i className="fa-regular fa-heart"></i>

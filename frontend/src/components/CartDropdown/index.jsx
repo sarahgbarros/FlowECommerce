@@ -1,22 +1,21 @@
 import React from 'react';
 import styles from './index.module.css';
-import { Link } from 'react-router-dom';
 import { useContextCart } from '../../contexts/CartContext';
 
 
 const CartDropdown = () => {
-    const { cart, removeProductFromCart } = useContextCart(); 
-    
+    const { cart, removeProductFromCart } = useContextCart();
+
     const [selectedItems, setSelectedItems] = React.useState([]);
 
     React.useEffect(() => {
         setSelectedItems(cart.map(item => item.id));
-    }, [cart]); 
+    }, [cart]);
 
     const total = cart.reduce((sum, item) => {
         if (selectedItems.includes(item.id)) {
             const price = parseFloat(item.price) || 0;
-            const quantity = item.quantity || 1; 
+            const quantity = item.quantity || 1;
             return sum + (price * quantity);
         }
         return sum;
@@ -41,14 +40,49 @@ const CartDropdown = () => {
 
     const allSelected = selectedItems.length === cart.length && cart.length > 0;
 
+    const handleCheckout = async () => {
+        if (selectedItems.length === 0) {
+            alert("Selecione pelo menos um item para prosseguir com a compra.")
+            return
+        }
+        
+        const selectedProducts = cart
+            .filter(item => selectedItems.includes(item.id))
+            .map(item => ({
+                title: item.name,
+                quantity: parseInt(item.quantity) || 1,
+                unit_price: parseFloat(item.price)
+            }))
+
+        try {
+            const response = await fetch("http://localhost:8000/create-preference/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ items: selectedProducts }),
+            })
+
+            if (!response.ok) {
+                const errorData = await response.json()
+                throw new Error(errorData.detail || 'Falha ao criar preferência de pagamento.')
+            }
+
+            const data = await response.json()
+
+            window.location.href = data.init_point
+        } catch (error) {
+            console.error("Erro no checkout:", error)
+            alert(`Ocorreu um erro ao processar o pagamento: ${error.message}`)
+        }
+    }
+
     return (
         <div className={styles.cartDropdown}>
 
-            <div className={styles.YourCart}>SEU CARRINHO</div> 
+            <div className={styles.YourCart}>SEU CARRINHO</div>
 
             {cart.length === 0 ? (
                 <div className={styles.EmptyCart}>Nenhum produto adicionado!
-                <img src="/images/empty.jpg" alt="emoji empty" className={styles['emoji-empty']} />
+                    <img src="/images/empty.jpg" alt="emoji empty" className={styles['emoji-empty']} />
                 </div>
             ) : (
 
@@ -69,10 +103,10 @@ const CartDropdown = () => {
                                 </div>
                             </div>
 
-                            <button 
-                                className={styles.deleteButton} 
+                            <button
+                                className={styles.deleteButton}
                                 aria-label="Remover item"
-                                onClick={() => removeProductFromCart(item.id)} 
+                                onClick={() => removeProductFromCart(item.id)}
                             >
                                 <i className="fa-solid fa-trash-can"></i>
                             </button>
@@ -98,9 +132,13 @@ const CartDropdown = () => {
             )}
 
             {cart.length > 0 && (
-                <Link to="/checkout" className={styles.checkoutButton}>
+                <button
+                    onClick={handleCheckout} 
+                    className={styles.checkoutButton}
+                    disabled={selectedItems.length === 0}
+                >
                     COMPRE AGORA ({selectedItems.length} ITENS SELECIONADOS)
-                </Link>
+                </button>
             )}
         </div>
     );

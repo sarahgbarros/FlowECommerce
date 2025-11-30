@@ -1,0 +1,98 @@
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffe8e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px;
+        }
+        .card {
+            background: #fff;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+        .icon-circle {
+            font-size: 42px;
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            background: #ffe5e5;
+            color: #d00;
+        }
+        .title {
+            font-size: 28px;
+            color: #d00;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 24px;
+        }
+        .info-box {
+            background: #f3f3f3;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        .alert {
+            background: #ffd4d4;
+            padding: 12px;
+            border-left: 3px solid red;
+            border-radius: 6px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        ul {
+            text-align: left;
+            color: #555;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn {
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+        }
+        .primary {
+            background: #d00;
+            color: #fff;
+        }
+        .outline {
+            background: transparent;
+            border: 2px solid #d00;
+            color: #d00;
+        }
+        .link {
+            background: none;
+            color: #555;
+            text-decoration: underline;
+        }
+        .btn:hover.primary {
+            background: #a00;
+        }
+    

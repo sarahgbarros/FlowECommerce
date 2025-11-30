@@ -29,8 +29,9 @@ const Header = () => {
       <header className={styles.header}>
 
         <Link to="/">
-          <img src="/images/logo.png" alt="Logo Flow" className={styles['logo-Flow']} />
+          <img src="/images/flowLogo.png" alt="Logo Flow" className={styles['logo-Flow']} />
         </Link>
+  
 
         <nav className={styles.dropdown}>
           <button className={styles.dropbtn}>
@@ -39,9 +40,11 @@ const Header = () => {
             </span>
           </button>
           <div className={styles['dropdown-content']}>
-            <Link to="">Roupas</Link>
-            <Link to="">Acessórios</Link>
-            <Link to="">Eletronicos</Link>
+            <Link to="">Móveis</Link>             
+            <Link to="">Vestuário</Link>
+            <Link to="">Livros</Link>
+            <Link to="">Tecnologia</Link>
+            <Link to="">PetShop</Link>
           </div>
         </nav>
 
@@ -66,29 +69,29 @@ const Header = () => {
             onKeyDown={handleKeyDown}
             className={styles['search-input']}
           />
-          <i className={`fa-solid fa-magnifying-glass ${styles['search-icon']}`}></i>        
-          </div>
+          <i className={`fa-solid fa-magnifying-glass ${styles['search-icon']}`}></i>
+        </div>
 
         <button className={styles.profile}>
           <span className={styles.titleMenu}>
-            Perfil <i class="fa-solid fa-circle-user"></i>
+            <i class="fa-solid fa-user"></i> Conta
           </span>
         </button>
 
         <nav className={styles['dropdown-cart']}>
-          <button 
-            className={styles['cart-trigger']} 
+          <button
+            className={styles['cart-trigger']}
             onClick={toggleCartDropdown}
             aria-expanded={showCartDropdown}
             aria-label="Toggle carrinho de compras"
           >
             <div className={styles['cart-shopping']}>
-              <i className="fa-solid fa-cart-shopping"></i>
+             <i class="fa-solid fa-cart-plus"></i>
             </div>
 
             <i className={`fas fa-chevron-down ${showCartDropdown ? styles.rotated : ''}`}></i>
           </button>
-          
+
           {showCartDropdown && <CartDropdown />}
         </nav>
 
