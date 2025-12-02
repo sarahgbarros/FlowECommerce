@@ -1,0 +1,74 @@
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .page {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        background: linear-gradient(to bottom right, #e7ffee, #d7ffe9);
+    }
+    .card {
+        width: 100%;
+        max-width: 420px;
+        background: #fff;
+        padding: 32px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+    .icon-circle {
+        font-size: 42px;
+        width: 85px;
+        height: 85px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 auto 16px;
+        background: #e1ffe9;
+        color: #0a9a3a;
+    }
+    .title {
+        font-size: 28px;
+        color: #0a9a3a;
+        margin-bottom: 8px;
+    }
+    .subtitle {
+        color: #666;
+        margin-bottom: 24px;
+    }
+    .info-box {
+        background: #f3f3f3;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    .btn {
+        padding: 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        border: none;
+    }
+    .outline {
+        background: transparent;
+        border: 2px solid #0a9a3a;
+        color: #0a9a3a;
+    }
+   

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/Templates/styles/sucesso.css">
+    <title>Compra Aprovada</title>
+
+   
+</head>
+<body>
+
+<div class="page sucesso-bg sucesso">
+  <div class="card">
+
+    <div class="icon-circle">✓</div>
+
+    <h1 class="title">Compra Aprovada!</h1>
+    <p class="subtitle">Seu pagamento foi processado com sucesso</p>
+
+    <div class="info-box">
+      <div class="info-row">
+        <span>ID da Transação:</span>
+        <strong>{{ transaction_id }}</strong>
+      </div>
+      <div class="info-row">
+        <span>Data:</span>
+        <strong>{{ transaction_date|date:"d/m/Y H:i:s" }}</strong>
+      </div>
+      <div class="info-row">
+        <span>Status:</span>
+        <strong style="color:#0a9a3a;">Aprovado</strong>
+      </div>
+    </div>
+
+   <div class="buttons">
+  <button class="btn outline" 
+          onclick="window.location.href='http://localhost:5173'">
+    ← Voltar ao Início
+  </button>
+</div>
+
+
+  </div>
+</div>
+
+</body>
+</html>

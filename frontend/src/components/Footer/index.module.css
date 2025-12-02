@@ -1,0 +1,99 @@
+.footer {
+  background-color: #ffffff;
+  width: 100%; 
+  text-align: left;
+  border-top: 1px solid #c3b4b463;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px; 
+  display: flex;
+  justify-content: space-between; 
+  border-bottom: 1px solid #c3b4b463; 
+}
+
+.flow-logo {
+  width: 150px; 
+  height: auto;
+  margin-bottom: 15px; 
+}
+
+.flow-slogan {
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 250px;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 60px; 
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.column-list {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+
+.column-list li {
+  margin-bottom: 8px; 
+}
+
+.column-link {
+  color: #555555; 
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.column-link:hover {
+  color: rgb(84, 145, 84); 
+  text-decoration: underline;
+}
+
+.bottom-footer {
+  padding: 15px 20px; 
+  background-color: #ffffff;
+}
+
+.bottom-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: flex-start; 
+}
+
+.bottom-link {
+  color: #555555;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.bottom-link:hover {
+  color: rgb(84, 145, 84);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  margin: 0;
+  margin-left: auto; 
+}

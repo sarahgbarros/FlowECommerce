@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/Templates/styles/erro.css">
+    <title>Compra Negada</title>
+    
+</head>
+<body>
+    <div class="card">
+        <div class="icon-circle">✖</div>
+
+        <h1 class="title">Compra Negada</h1>
+        <p class="subtitle">Não foi possível processar seu pagamento.</p>
+
+        <div class="alert">
+            O pagamento foi recusado pela operadora do cartão. Verifique seus dados ou tente outro método.
+        </div>
+
+        <div class="info-box">
+            <div class="info-row">
+                <span>ID da Tentativa:</span>
+                <strong>{{ transaction_id|default:"#TRX-2024-ERR" }}</strong>
+            </div>
+            <div class="info-row">
+                <span>Data:</span>
+                <strong>{{ transaction_date|date:"d/m/Y" }}</strong>
+            </div>
+            <div class="info-row">
+                <span>Status:</span>
+                <strong style="color:#d00">Negado</strong>
+            </div>
+        </div>
+
+        <p><strong>Possíveis motivos:</strong></p>
+        <ul>
+            <li>Saldo insuficiente</li>
+            <li>Dados do cartão incorretos</li>
+            <li>Cartão bloqueado ou vencido</li>
+            <li>Limite de compras excedido</li>
+        </ul>
+
+       <div class="buttons">
+  <button class="btn outline" 
+          onclick="window.location.href='http://localhost:5173'">
+    ← Voltar ao Início
+  </button>
+</div>
+</body>
+</html>
